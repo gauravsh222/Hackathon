@@ -1,6 +1,6 @@
 package com.controller;
 
-import com.service.Health;
+import com.service.HealthService;
 
 public class Controller {
 
@@ -20,7 +20,7 @@ public class Controller {
 				break;
 			}
 		}
-		return  Health.disAppeared;
+		return  HealthService.disAppeared;
 	}
 
 }

@@ -6,7 +6,7 @@ import com.marble.Four;
 import com.marble.One;
 import com.marble.Three;
 import com.marble.Two;
-import com.service.Health;
+import com.service.HealthService;
 
 public class Traversal {
 	
@@ -24,7 +24,7 @@ public class Traversal {
 		for(row=row; row>=0; row--){
 			System.out.println(arr[row][col]);
 			if(arr[row][col] != 0){
-				int [] val = Health.operateHealth(arr[row][col]);
+				int [] val = HealthService.operateHealth(arr[row][col]);
 				//Getting block object 
 				Block block = getBlock(val[0]);
 				arr[row][col] = val[1];
@@ -45,7 +45,7 @@ public class Traversal {
 		for(row=row; row<arr.length; row++){
 			System.out.println(arr[row][col]);
 			if(arr[row][col] != 0){
-				int [] val = Health.operateHealth(arr[row][col]);
+				int [] val = HealthService.operateHealth(arr[row][col]);
 				//Getting block object 
 				Block block = getBlock(val[0]);
 				arr[row][col] = val[1];
@@ -65,7 +65,7 @@ public class Traversal {
 		for(col=col; col>=0; col--){
 			System.out.println(arr[row][col]);
 			if(arr[row][col] != 0){
-				int [] val = Health.operateHealth(arr[row][col]);
+				int [] val = HealthService.operateHealth(arr[row][col]);
 				//Getting block object 
 				Block block = getBlock(val[0]);
 				arr[row][col] = val[1];
@@ -86,7 +86,7 @@ public class Traversal {
 		for(col=col; col<arr.length; col++){
 			System.out.println(arr[row][col]);
 			if(arr[row][col] != 0){
-				int [] val = Health.operateHealth(arr[row][col]);
+				int [] val = HealthService.operateHealth(arr[row][col]);
 				//Getting block object 
 				Block block = getBlock(val[0]);
 				arr[row][col] = val[1];
