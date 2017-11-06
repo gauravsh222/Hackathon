@@ -22,7 +22,6 @@ public class Traversal {
 	public String up(){
 		boolean flag = true;
 		for(row=row; row>=0; row--){
-			System.out.println(arr[row][col]);
 			if(arr[row][col] != 0){
 				int [] val = HealthService.operateHealth(arr[row][col]);
 				//Getting block object 
@@ -43,7 +42,6 @@ public class Traversal {
 	public String down(){
 		boolean flag = true;
 		for(row=row; row<arr.length; row++){
-			System.out.println(arr[row][col]);
 			if(arr[row][col] != 0){
 				int [] val = HealthService.operateHealth(arr[row][col]);
 				//Getting block object 
@@ -63,7 +61,6 @@ public class Traversal {
 	public String left(){
 		boolean flag = true;
 		for(col=col; col>=0; col--){
-			System.out.println(arr[row][col]);
 			if(arr[row][col] != 0){
 				int [] val = HealthService.operateHealth(arr[row][col]);
 				//Getting block object 
@@ -84,7 +81,6 @@ public class Traversal {
 	public String right(){
 		boolean flag = true;
 		for(col=col; col<arr.length; col++){
-			System.out.println(arr[row][col]);
 			if(arr[row][col] != 0){
 				int [] val = HealthService.operateHealth(arr[row][col]);
 				//Getting block object 
