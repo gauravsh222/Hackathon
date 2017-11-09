@@ -30,7 +30,7 @@ public class App
     	stockBo.update(stock2);
     	
     	/** delete **/
-    	stockBo.delete(stock2);
+    	//stockBo.delete(stock2);
     	
     	System.out.println("Done");
     }
