@@ -4,15 +4,9 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Add Person</title>
+<title>Insert title here</title>
 </head>
 <body>
-
-<form action="/kafka/pub" method="post">
-	EmpId : <input type="text" name="id"/><br/>
-	Employee : <input type="text" name="name"/>
-<input type="submit" value="Submit">
-</form>
-
+You are Logged in...!
 </body>
 </html>

@@ -1,4 +1,4 @@
-package com.cisco.boot;
+package com.cisco.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -12,10 +12,11 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.cisco.kafka.KafkaProducer;
 import com.cisco.kafka.MessageStorage;
+import com.cisco.model.Device;
 
 @RestController
-@RequestMapping("/kafka")
-public class MyController {
+@RequestMapping("/device")
+public class DeviceController {
 	
 	@Autowired
 	KafkaProducer producer;
@@ -33,52 +34,19 @@ public class MyController {
 	
 	@RequestMapping(value="/add", method=RequestMethod.POST)
 	public String publish(@ModelAttribute("device") Device d){
-		System.out.println(d.node);
-		System.out.println(d.ipAddress);
-		System.out.println(d.terminalIP);
-		System.out.println(d.port);
-		System.out.println("publisher called adding devic	e");
-		producer.send(d.node);
+		System.out.print(d.getNode());
+		System.out.print(d.getIpAddress());
+		System.out.print(d.getTerminalIP());
+		System.out.println(d.getPort());
+		System.out.println("publisher called adding device");
+		producer.send(d.getNode());
 		return "done";
 	}
 	
-	@RequestMapping("/devices")
+/*	@RequestMapping("/devices")
 	public String getDevice(){
 		System.out.println("subscriber called");
 		System.out.println(storage.toString());
 		return storage.toString();
-	}
-	
-	
-	@RequestMapping(value="/pub", method=RequestMethod.POST)
-	public String publish(@RequestBody Person p){
-		System.out.println(p.name);
-		System.out.println("publisher called");
-		//producer.send("Hello Gaurav");
-		return "done";
-	}
-	
-	@RequestMapping("/sub")
-	public String subscribe(){
-		System.out.println("subscriber called");
-		System.out.println(storage.toString());
-		return storage.toString();
-	}
-	
-	
-	@RequestMapping("/model")
-	public ModelAndView runTest(){
-		ModelAndView model = new ModelAndView();
-		model.setViewName("addPerson");
-		return model;
-	}
-	
-
-	@RequestMapping("/login")
-	public ModelAndView login(){
-		ModelAndView model = new ModelAndView();
-		model.setViewName("success");
-		return model;
-	}
-	
+	}*/
 }

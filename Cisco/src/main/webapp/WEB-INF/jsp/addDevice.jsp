@@ -4,15 +4,16 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Add Person</title>
+<title>Insert title here</title>
 </head>
 <body>
 
-<form action="/kafka/pub" method="post">
-	EmpId : <input type="text" name="id"/><br/>
-	Employee : <input type="text" name="name"/>
+<form action="/kafka/add" method="post" commandName="device">
+	Node Name  : <input type="text" name="node"/><br/>
+	IP Address : <input type="text" name="ipAddress"/><br/>
+	Terminal IP : <input type="text" name="terminalIP"/><br/>
+	Port : <input type="text" name="port"/><br/>
 <input type="submit" value="Submit">
 </form>
-
 </body>
 </html>

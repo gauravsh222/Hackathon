@@ -12,7 +12,6 @@ public class KafkaProducer {
 	@Autowired
 	private KafkaTemplate<String, String> kafkaTemplate;
 	
-	@Value("${jsa.kafka.topic}")
 	String kafkaTopic = "javainuse-topic";
 	
 	public void send(String data) {
