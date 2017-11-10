@@ -32,7 +32,7 @@ public class DeviceController {
 		System.out.print(d.getTerminalIP());
 		System.out.println(d.getPort());
 		System.out.println("publisher called adding device");
-		producer.send(d.getNode());
+		producer.send(d);
 		return "done";
 	}
 	

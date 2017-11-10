@@ -1,6 +1,12 @@
 package com.cisco.model;
 
-public class Device {
+import java.io.Serializable;
+
+public class Device implements Serializable {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -254830618567945985L;
 	String node;
 	String ipAddress;
 	String terminalIP;
