@@ -1,4 +1,4 @@
-package com.cisco.model;
+package com.cisco.producer;
 
 import java.io.Serializable;
 

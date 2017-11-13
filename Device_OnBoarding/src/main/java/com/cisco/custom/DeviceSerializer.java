@@ -9,7 +9,6 @@ public class DeviceSerializer implements Serializer<Device> {
 
 	@Override
 	public void configure(Map<String, ?> config, boolean isKey) {
-		// TODO Auto-generated method stub
 		
 	}
 
@@ -18,7 +17,8 @@ public class DeviceSerializer implements Serializer<Device> {
 		  byte[] retVal = null;
 		    ObjectMapper objectMapper = new ObjectMapper();
 		    try {
-		      retVal = objectMapper.writeValueAsString(data).getBytes();
+		    	String str = objectMapper.writeValueAsString(data);
+		      retVal = str.getBytes();
 		    } catch (Exception e) {
 		      e.printStackTrace();
 		    }
@@ -27,7 +27,6 @@ public class DeviceSerializer implements Serializer<Device> {
 
 	@Override
 	public void close() {
-		// TODO Auto-generated method stub
 		
 	}
 	

@@ -8,7 +8,7 @@
 </head>
 <body>
 
-<form action="/device/pub" method="post" commandName="device">
+<form action="/producer/pub" method="post">
 <table>
 	<tr>
 <td>Node Name : <td/>

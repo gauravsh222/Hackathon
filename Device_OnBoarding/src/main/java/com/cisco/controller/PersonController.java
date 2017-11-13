@@ -9,11 +9,11 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.cisco.kafka.KafkaConsumer;
 import com.cisco.kafka.KafkaProducer;
-import com.cisco.model.Device;
+import com.cisco.model.Person;
 
 @RestController
-@RequestMapping("/device")
-public class DeviceController {
+@RequestMapping("/person")
+public class PersonController {
 	
 	@Autowired
 	KafkaProducer producer;
@@ -23,13 +23,13 @@ public class DeviceController {
 	
 	@RequestMapping(value = "/init", method = RequestMethod.GET)
 	public ModelAndView init() {
-	   return new ModelAndView("addDevice", "command", new Device());
+	   return new ModelAndView("addPerson", "command", new Person());
 	}
 	
 	@RequestMapping(value="/pub", method=RequestMethod.POST)
-	public String publish(@ModelAttribute("device") Device d){
-	   System.out.println("Publisher called for device : " + d.getNode());
-	   producer.send(d);
+	public String publish(@ModelAttribute("person") Person p){
+	   System.out.println("Publisher called for Person : " + p.getName());
+	   producer.send(p);
 	   return "done";
 	}
 	
@@ -39,3 +39,4 @@ public class DeviceController {
 	   return "success";
 	}
 }
+

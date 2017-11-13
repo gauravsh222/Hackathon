@@ -9,8 +9,6 @@ public class DeviceDeserializer implements Deserializer<Device>  {
 
 	@Override
 	public void configure(Map config, boolean isKey) {
-		// TODO Auto-generated method stub
-		
 	}
 
 	@Override
@@ -27,8 +25,6 @@ public class DeviceDeserializer implements Deserializer<Device>  {
 
 	@Override
 	public void close() {
-		// TODO Auto-generated method stub
-		
 	}
 
 
