@@ -2,6 +2,7 @@ package com.cisco.producer;
 
 import org.apache.kafka.clients.producer.ProducerRecord;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.kafka.support.SendResult;
 import org.springframework.util.concurrent.ListenableFuture;
@@ -17,6 +18,9 @@ public class MyController {
 	
 	@Autowired
 	private KafkaTemplate<String, Device> template;
+	
+	@Value("${jsa.kafka.topic}")
+	private String topic;
 
 	@RequestMapping(value="/init", method=RequestMethod.GET)
 	public ModelAndView init(){
@@ -25,7 +29,7 @@ public class MyController {
 	
 	@RequestMapping(value="/pub", method=RequestMethod.POST)
 	public void produce(@ModelAttribute Device device) {
-		ListenableFuture<SendResult<String, Device>> obj = template.send(new ProducerRecord<String, Device>("VSLP", device));
+		ListenableFuture<SendResult<String, Device>> obj = template.send(new ProducerRecord<String, Device>(topic, device));
 		System.out.println("isDone : " + obj.isDone());
 	}
 }
